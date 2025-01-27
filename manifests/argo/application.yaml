@@ -8,10 +8,33 @@ spec:
   source:
     repoURL: https://github.com/Muk007/k8s-apps
     targetRevision: HEAD
-    path: manifests/apps/entity
+    path: manifests/apps/entity/base
   destination:
     server: https://kubernetes.default.svc
     namespace: entity
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: accounts
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Muk007/k8s-apps
+    targetRevision: HEAD
+    path: manifests/apps/accounts/base
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: accounts
   syncPolicy:
     automated:
       prune: true
