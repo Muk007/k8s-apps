@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: entity
-  name: entiy-service
+  name: entity-service
   labels:
     app: entity-service
 spec:
