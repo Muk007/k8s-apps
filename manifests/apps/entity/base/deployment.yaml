@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp
+  name: entiy-service
   labels:
-    app: webapp
+    app: entity-service
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: webapp
+      app: entity-service
   template:
     metadata:
       labels:
-        app: webapp
+        app: entity-service
     spec:
       containers:
-        - name: webapp
+        - name: entity-service
           image: nginx:latest
           ports:
             - containerPort: 80
