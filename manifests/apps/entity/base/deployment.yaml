@@ -15,7 +15,6 @@ spec:
       labels:
         app: entity-service
     spec:
-      serviceaccount: entity-sa
       containers:
         - name: entity-service
           image: nginx:latest
