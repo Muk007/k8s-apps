@@ -29,6 +29,8 @@ GitOps is a way of implementing continuous delivery for cloud-native application
 
 ## Repository Structure
 
+```plaintext
+
 .
 ├── README.md
 └── manifests
