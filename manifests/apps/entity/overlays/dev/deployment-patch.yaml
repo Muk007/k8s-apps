@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: entity
   name: entity-service
 spec:
   replicas: 1
