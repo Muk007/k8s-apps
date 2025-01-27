@@ -2,4 +2,8 @@ resources:
   - ../../base
 
 patches:
-  - deployment-patch.yaml
+  - target:
+      kind: Deployment
+      name: entity-service
+      namespace: entity
+    path: deployment-patch.yaml

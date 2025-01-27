@@ -2,4 +2,8 @@ resources:
   - ../../base
 
 patches:
-  - deployment-patch.yaml
+  - target:
+      kind: Deployment
+      name: account-service
+      namespace: accounts
+    path: deployment-patch.yaml
