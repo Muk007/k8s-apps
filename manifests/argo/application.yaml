@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Muk007/k8s-apps.git
-    targetRevision: main
+    repoURL: https://github.com/Muk007/k8s-apps
+    targetRevision: HEAD
     path: manifests/apps/entity
   destination:
     server: https://kubernetes.default.svc
