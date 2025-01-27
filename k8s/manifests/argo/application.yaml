@@ -8,13 +8,36 @@ spec:
   source:
     repoURL: https://github.com/Muk007/ms-app.git
     targetRevision: main
-    path: k8s/manifests/apps
+    path: k8s/manifests/apps/entity
   destination:
     server: https://kubernetes.default.svc
-    namespace: webapp
+    namespace: entity
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webapp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Muk007/ms-app.git
+    targetRevision: main
+    path: k8s/manifests/apps/accounts
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: accounts
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
