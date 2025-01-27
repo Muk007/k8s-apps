@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app
+  name: webapp
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Muk007/ms-app.git
     targetRevision: main
-    path: k8s/manifests
+    path: k8s/manifests/apps
   destination:
     server: https://kubernetes.default.svc
-    namespace: my-app
+    namespace: webapp
   syncPolicy:
     automated:
       prune: true
