@@ -29,32 +29,34 @@ GitOps is a way of implementing continuous delivery for cloud-native application
 
 ## Repository Structure
 
-```plaintext
 .
 ├── README.md                     
-├── manifests/                    
-│   ├── apps/                     
-│   │   ├── entity/               
-│   │   │   ├── base/             # Base Kustomize configurations for entity
-│   │   │   │   ├── deployment.yaml
-│   │   │   │   ├── service.yaml
-│   │   │   │   ├── serviceaccount.yaml
-│   │   │   │   └── kustomization.yaml
-│   │   │   └── overlays/         # Environment-specific configurations
-│   │   │       ├── dev/          # Dev environment configs
-│   │   │       │   ├── kustomization.yaml
-│   │   │       │   └── deployment-patch.yaml
-│   │   │       ├── staging/      # Staging environment configs (WIP)
-│   │   │       │   ├── kustomization.yaml
-│   │   │       │   └── deployment-patch.yaml
-│   │   │       └── prod/         # Production environment configs (WIP)
-│   │   │           ├── kustomization.yaml
-│   │   │           └── deployment-patch.yaml
-|   |   └── accounts/<accounts-structure-follows-entity's>
-|   |
-|   |
-│   └── argo/application.yaml     
-└── README.md                            
+└── manifests/                    
+    ├── apps/                     
+    │   ├── entity/               
+    │   │   ├── base/             # Base Kustomize configurations for entity
+    │   │   │   ├── deployment.yaml
+    │   │   │   ├── service.yaml
+    │   │   │   ├── serviceaccount.yaml
+    │   │   │   └── kustomization.yaml
+    │   │   └── overlays/         # Environment-specific configurations
+    │   │       ├── dev/          # Dev environment configs
+    │   │       │   ├── kustomization.yaml
+    │   │       │   └── deployment-patch.yaml
+    │   │       ├── staging/      # Staging environment configs (WIP)
+    │   │       │   ├── kustomization.yaml
+    │   │       │   └── deployment-patch.yaml
+    │   │       └── prod/         # Production environment configs (WIP)
+    │   │           ├── kustomization.yaml
+    │   │           └── deployment-patch.yaml
+    |   └── accounts/<accounts-structure-follows-entity's>
+    |
+    |
+    └── argo/application.yaml     
+                            
+
+
+
 
 
 
