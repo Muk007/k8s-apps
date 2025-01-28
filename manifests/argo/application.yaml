@@ -54,7 +54,7 @@ spec:
   source:
     repoURL: https://github.com/Muk007/k8s-apps
     targetRevision: HEAD
-    path: 
+    path: manifests/apps/generalledger/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: generalledger
