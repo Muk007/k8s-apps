@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: generalledger
+  name: gl-service
+spec:
+  replicas: 3
+  template:
+    spec:
+      serviceAccountName: generalledger-sa
+      containers:
+        - name: entity-service
+          image: nginx:alpine

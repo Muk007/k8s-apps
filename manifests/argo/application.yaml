@@ -41,3 +41,26 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: generalledger
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Muk007/k8s-apps
+    targetRevision: HEAD
+    path: 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: generalledger
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
