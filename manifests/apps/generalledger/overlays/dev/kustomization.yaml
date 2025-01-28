@@ -4,6 +4,6 @@ resources:
 patches:
   - target:
       kind: Deployment
-      name: entity-service
-      namespace: entity
+      name: gl-service
+      namespace: generalledger
     path: deployment-patch.yaml
