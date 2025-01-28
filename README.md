@@ -33,28 +33,43 @@ GitOps is a way of implementing continuous delivery for cloud-native application
 
 .
 ├── README.md
-└── manifests
-    ├── apps
-    │   ├── accounts
-    │   │   ├── base
-    │   │   │   ├── deployment.yaml
-    │   │   │   ├── kustomization.yaml
-    │   │   │   ├── service.yaml
-    │   │   │   └── serviceaccount.yaml
-    │   │   └── overlays
-    │   │       └── dev
-    │   │           ├── deployment-patch.yaml
-    │   │           └── kustomization.yaml
-    │   └── entity
-    │       ├── base
-    │       │   ├── deployment.yaml
-    │       │   ├── kustomization.yaml
-    │       │   ├── service.yaml
-    │       │   └── serviceaccount.yaml
-    │       └── overlays
-    │           └── dev
-    │               ├── deployment-patch.yaml
-    │               └── kustomization.yaml
-    └── argo
-        └── application.yaml
-
+├── manifests
+│   ├── apps
+│   │   ├── accounts
+│   │   │   ├── base
+│   │   │   │   ├── deployment.yaml
+│   │   │   │   ├── kustomization.yaml
+│   │   │   │   ├── service.yaml
+│   │   │   │   └── serviceaccount.yaml
+│   │   │   └── overlays
+│   │   │       └── dev
+│   │   │           ├── deployment-patch.yaml
+│   │   │           └── kustomization.yaml
+│   │   ├── entity
+│   │   │   ├── base
+│   │   │   │   ├── deployment.yaml
+│   │   │   │   ├── kustomization.yaml
+│   │   │   │   ├── service.yaml
+│   │   │   │   └── serviceaccount.yaml
+│   │   │   └── overlays
+│   │   │       └── dev
+│   │   │           ├── deployment-patch.yaml
+│   │   │           └── kustomization.yaml
+│   │   └── generalledger
+│   │       ├── base
+│   │       │   ├── deployment.yaml
+│   │       │   ├── kustomization.yaml
+│   │       │   ├── service.yaml
+│   │       │   ├── serviceaccount.yaml
+│   │       │   └── serviceaccount.yamle
+│   │       └── overlays
+│   │           └── dev
+│   │               ├── deployment-patch.yaml
+│   │               └── kustomization.yaml
+│   └── argo
+│       ├── applications
+│       │   └── application.yaml
+│       └── projects
+│           └── project.yaml
+└── monitoring
+    └── README.md
