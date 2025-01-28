@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: sandbox-project
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Sample project.
+  # Allow all repositories as sources
+  sourceRepos:
+    - '*'
+  # Allow deployments to any cluster and namespace
+  destinations:
+    - server: '*'
+      namespace: '*'
+  # Allow management of all cluster resources
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  # Disable any restrictions for namespace-scoped resources
+  namespaceResourceBlacklist: []
