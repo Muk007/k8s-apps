@@ -6,7 +6,7 @@ metadata:
 spec:
   project: sandbox-project
   source:
-    repoURL: https://github.com/devops-contribution/k8s-apps
+    repoURL: https://github.com/Muk007/k8s-apps
     targetRevision: HEAD
     path: manifests/apps/entity/overlays/dev
   destination:
@@ -29,7 +29,7 @@ metadata:
 spec:
   project: sandbox-project
   source:
-    repoURL: https://github.com/devops-contribution/k8s-apps
+    repoURL: https://github.com/Muk007/k8s-apps
     targetRevision: HEAD
     path: manifests/apps/accounts/overlays/dev
   destination:
@@ -52,7 +52,7 @@ metadata:
 spec:
   project: sandbox-project
   source:
-    repoURL: https://github.com/devops-contribution/k8s-apps
+    repoURL: https://github.com/Muk007/k8s-apps
     targetRevision: HEAD
     path: manifests/apps/generalledger/overlays/dev
   destination:
