@@ -13,8 +13,10 @@ Before proceeding with the installation, you need to create the `argocd` namespa
 
 ```bash
 kubectl create namespace argocd
+```
 
 ## Step 2: Install argocd components in `argocd` Namespace
 
 ```bash
 kubectl apply -f manifests/argo/prerequisite/install.yaml
+```
