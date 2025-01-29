@@ -3,6 +3,7 @@
 set -e  # Exit on error
 
 echo "🚀 Starting Kustomize Manifest Validation..."
+echo
 
 # Validate all overlays under manifests/apps/*/overlays/*
 for app_dir in manifests/apps/*; do
