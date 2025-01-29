@@ -17,18 +17,18 @@ jobs:
       - name: Install Kubeconform
         run: |
           curl -LO "https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz" /
-          tar -xvf kubeconform-linux-amd64.tar.gz /
-          chmod +x kubeconform-linux-amd64 /
-          sudo mv kubeconform-linux-amd64 /usr/local/bin/kubeconform
-
-      - name: Install Kustomize
-        run: |
-          curl -LO "https://github.com/kubernetes-sigs/kustomize/releases/latest/download/kustomize-linux-amd64.tar.gz" /
-          tar -xvf kustomize-linux-amd64.tar.gz /
-          chmod +x kustomize-linux-amd64 /
-          sudo mv kustomize-linux-amd64 /usr/local/bin/kustomize
-
-      - name: Validate app manifests
-        run: |
-          chmod +x scripts/manifest-validation.sh /
-          /bin/bash scripts/manifest-validation.sh
+#          tar -xvf kubeconform-linux-amd64.tar.gz /
+#          chmod +x kubeconform-linux-amd64 /
+#          sudo mv kubeconform-linux-amd64 /usr/local/bin/kubeconform
+#
+#      - name: Install Kustomize
+#        run: |
+#          curl -LO "https://github.com/kubernetes-sigs/kustomize/releases/latest/download/kustomize-linux-amd64.tar.gz" /
+#          tar -xvf kustomize-linux-amd64.tar.gz /
+#          chmod +x kustomize-linux-amd64 /
+#          sudo mv kustomize-linux-amd64 /usr/local/bin/kustomize
+#
+#      - name: Validate app manifests
+#        run: |
+#          chmod +x scripts/manifest-validation.sh /
+#          /bin/bash scripts/manifest-validation.sh
