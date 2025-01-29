@@ -16,9 +16,9 @@ jobs:
 
       - name: Install Kubeconform
         run: |
-          curl -L -o kubeconform https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64 /
-          chmod +x kubeconform /
-          sudo mv kubeconform /usr/local/bin/
+          curl -LO "https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64" /
+          chmod +x kubeconform-linux-amd64 /
+          sudo mv kubeconform-linux-amd64 /usr/local/bin/kubeconform
 
       - name: Install Kustomize
         run: |
