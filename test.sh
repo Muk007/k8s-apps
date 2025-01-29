@@ -35,6 +35,9 @@ for app_dir in manifests/apps/*; do
         if [ -d "$overlay" ]; then
           echo "🔍 Validating overlay: $overlay"
 
+          # Validate with kubectl dry-run
+          kustomize build "$overlay" | kubectl apply --dry-run=client -f -
+
           # Validate with kubeconform
           kustomize build "$overlay" | kubeconform -strict -summary -schema-location default
         fi
@@ -44,3 +47,6 @@ for app_dir in manifests/apps/*; do
 done
 
 echo "✅ All Kustomize manifests validated successfully!"
+
+
+
