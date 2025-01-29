@@ -37,8 +37,3 @@ jobs:
       #         kustomize build "$overlay" | kubectl apply --dry-run=client -f -
       #       done
       #     done
-¸
-
-
-
-
