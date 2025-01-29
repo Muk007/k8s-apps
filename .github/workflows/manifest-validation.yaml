@@ -18,8 +18,8 @@ jobs:
         run: |
           curl -LO "https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz"
           tar -xvf kubeconform-linux-amd64.tar.gz 
-          chmod +x kubeconform-linux-amd64
-          sudo mv kubeconform-linux-amd64 /usr/local/bin/kubeconform
+          chmod +x kubeconform
+          sudo mv kubeconform /usr/local/bin/
 
       - name: Install Kustomize
         run: |
