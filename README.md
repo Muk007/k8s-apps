@@ -37,7 +37,7 @@ This guide will walk you through the steps to set up Argo CD in your Kubernetes 
 
 ### Step 1: Create the `argocd` Namespace
 
-Before proceeding with the installation, you need to create the `argocd` namespace in your Kubernetes cluster. Run the following command:
+Before proceeding with the installation, you need to create the `argocd` namespace in your Kubernetes cluster using below command
 
 ```bash
 kubectl create namespace argocd
