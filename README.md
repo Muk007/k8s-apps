@@ -28,11 +28,9 @@ GitOps is a way of implementing continuous delivery for cloud-native application
 
 ---
 
-## Prerequisite
+## Prerequisites
 
 This guide will walk you through the steps to set up Argo CD in your Kubernetes cluster.
-
-## Prerequisites
 
 - A running Kubernetes cluster.
 - `kubectl` installed and configured to interact with your cluster.
