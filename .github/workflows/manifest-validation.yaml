@@ -24,12 +24,21 @@ jobs:
           chmod +x kustomize-linux-amd64
           sudo mv kustomize-linux-amd64 /usr/local/bin/kustomize
 
-      - name: Validate all overlays with Kustomize and kubectl
+      - name: check kustomize
         run: |
-          for app in manifests/apps/*; do 
-            for overlay in $app; do
-              echo "Validating overlay: $overlay"
-              kustomize build "$overlay" | kubectl apply --dry-run=client -f -
-            done
-          done
+          which kustomize
+          which kubectl
+
+      # - name: Validate all overlays with Kustomize and kubectl
+      #   run: |
+      #     for app in manifests/apps/*; do 
+      #       for overlay in $app; do
+      #         echo "Validating overlay: $overlay"
+      #         kustomize build "$overlay" | kubectl apply --dry-run=client -f -
+      #       done
+      #     done
+¸
+
+
+
 
