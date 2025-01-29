@@ -4,7 +4,7 @@ metadata:
   namespace: entity
   name: entity-service
 spec:
-  replicas: 2
+  replicas: 1
   template:
     spec:
       serviceAccountName: entity-sa
