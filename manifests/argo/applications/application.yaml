@@ -44,23 +44,23 @@ spec:
 
 ---
 
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: generalledger
-  namespace: argocd
-spec:
-  project: sandbox-project
-  source:
-    repoURL: https://github.com/devops-contribution/k8s-apps
-    targetRevision: HEAD
-    path: manifests/apps/generalledger/overlays/dev
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: generalledger
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: generalledger
+#  namespace: argocd
+#spec:
+#  project: sandbox-project
+#  source:
+#    repoURL: https://github.com/devops-contribution/k8s-apps
+#    targetRevision: HEAD
+#    path: manifests/apps/generalledger/overlays/dev
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: generalledger
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#      - CreateNamespace=true
