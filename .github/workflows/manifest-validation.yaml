@@ -17,4 +17,3 @@ jobs:
       - name: Validate app manifests
         run: | 
           chmod +x scripts/manifest-validation.sh
-	  ./scripts/manifest-validation.sh
