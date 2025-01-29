@@ -23,10 +23,7 @@ jobs:
 
       - name: Install Kustomize
         run: |
-          https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.6.0/kustomize_v5.6.0_linux_amd64.tar.gz
-          tar -xvf kustomize_v5.6.0_linux_amd64.tar.gz
-          chmod +x kustomize
-          sudo mv kustomize /usr/local/bin/
+          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 
       - name: Validate app manifests
         run: |
