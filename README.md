@@ -1,4 +1,34 @@
-# Pre-requisite - Argo CD Setup
+# GitOps Repository
+
+This repository serves as the source of truth for deploying and managing Kubernetes resources using the GitOps methodology. All manifests, configurations, and Kustomize overlays are stored here to ensure consistent, automated, and declarative deployments.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Prerequisite](#prerequisite)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [ArgoCD Integration](#argocd-integration)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Overview
+
+GitOps is a way of implementing continuous delivery for cloud-native applications. This repository utilizes tools like **Kustomize** and **ArgoCD** to manage and deploy Kubernetes resources efficiently.
+
+### Features:
+- Declarative Kubernetes manifests
+- Automated deployments via ArgoCD
+- Multi-environment support (e.g., dev, staging, production)
+- Version-controlled infrastructure
+
+---
+
+## Prerequisite
 
 This guide will walk you through the steps to set up Argo CD in your Kubernetes cluster.
 
@@ -21,35 +51,7 @@ kubectl create namespace argocd
 kubectl apply -f manifests/argo/prerequisite/install-argocd.yaml
 ```
 
-# GitOps Repository
-
-This repository serves as the source of truth for deploying and managing Kubernetes resources using the GitOps methodology. All manifests, configurations, and Kustomize overlays are stored here to ensure consistent, automated, and declarative deployments.
-
 ---
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Repository Structure](#repository-structure)
-- [Getting Started](#getting-started)
-- [ArgoCD Integration](#argocd-integration)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## Overview
-
-GitOps is a way of implementing continuous delivery for cloud-native applications. This repository utilizes tools like **Kustomize** and **ArgoCD** to manage and deploy Kubernetes resources efficiently.
-
-### Features:
-- Declarative Kubernetes manifests
-- Automated deployments via ArgoCD
-- Multi-environment support (e.g., dev, staging, production)
-- Version-controlled infrastructure
-
----
-
 ## Repository Structure
 
 ```plaintext
