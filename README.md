@@ -7,7 +7,7 @@ This repository serves as the source of truth for deploying and managing Kuberne
 ## Table of Contents
 
 - [Overview](#overview)
-- [Prerequisite](#prerequisite)
+- [Prerequisites](#prerequisites)
 - [Repository Structure](#repository-structure)
 - [Getting Started](#getting-started)
 - [ArgoCD Integration](#argocd-integration)
