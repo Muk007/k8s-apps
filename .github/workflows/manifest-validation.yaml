@@ -1,46 +1,34 @@
-#!/bin/bash
+name: Validate Kubernetes Kustomize Manifests
 
-set -e  # Exit on error
+on:
+  push:
+    branches:
+      - main
 
-echo "🚀 Starting Kustomize Manifest Validation..."
+jobs:
+  validate:
+    name: Validate Kustomize Manifests
+    runs-on: ubuntu-latest
 
-# Install Kustomize if not available
-if ! command -v kustomize &> /dev/null; then
-  echo "⚡ Installing Kustomize..."
-  curl -LO "https://github.com/kubernetes-sigs/kustomize/releases/latest/download/kustomize-linux-amd64"
-  chmod +x kustomize-linux-amd64
-  sudo mv kustomize-linux-amd64 /usr/local/bin/kustomize
-fi
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-# Install kubeconform if not available
-if ! command -v kubeconform &> /dev/null; then
-  echo "⚡ Installing kubeconform..."
-  curl -L -o kubeconform https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64
-  chmod +x kubeconform
-  sudo mv kubeconform /usr/local/bin/
-fi
-
-# Validate all overlays under manifests/apps/*/overlays/*
-for app_dir in manifests/apps/*; do
-  if [ -d "$app_dir" ]; then
-    app_name=$(basename "$app_dir")
-    overlays_dir="$app_dir/overlays"
-
-    # Check if overlays exist for the application
-    if [ -d "$overlays_dir" ]; then
-      echo "🔍 Validating overlays for $app_name..."
-
-      # Loop through each overlay (e.g., dev, staging)
-      for overlay in "$overlays_dir"/*; do
-        if [ -d "$overlay" ]; then
-          echo "🔍 Validating overlay: $overlay"
-
-          # Validate with kubeconform
-          kustomize build "$overlay" | kubeconform -strict -summary -schema-location default
-        fi
-      done
-    fi
-  fi
-done
-
-echo "✅ All Kustomize manifests validated successfully!"
+      - name: Install kubectl and Kustomize
+        run: |
+          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+          chmod +x kubectl
+          sudo mv kubectl /usr/local/bin/
+          
+          curl -LO "https://github.com/kubernetes-sigs/kustomize/releases/latest/download/kustomize-linux-amd64"
+          chmod +x kustomize-linux-amd64
+          sudo mv kustomize-linux-amd64 /usr/local/bin/kustomize
+      - name: check kustomize
+        run: |
+          which kustomize
+          which kubectl
+      
+      - name: Validate app manifests
+        run: | 
+          chmod +x scripts/manifest-validation.sh
+	  ./scripts/manifest-validation.sh
