@@ -4,7 +4,7 @@ metadata:
   namespace: accounts
   name: account-service
 spec:
-  replicas: 3
+  replicas: 4
   template:
     spec:
       serviceAccountName: accounts-sa
