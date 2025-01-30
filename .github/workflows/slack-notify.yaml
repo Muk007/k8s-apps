@@ -1,0 +1,20 @@
+name: Notify Slack on PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - review_requested
+
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_MESSAGE: "🚀 A new PR is waiting for review: <${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}> by ${{ github.event.pull_request.user.login }}"
+          SLACK_COLOR: "#36a64f"
