@@ -7,20 +7,20 @@ helm repo update
 ```
 
 ```bash
-helm upgrade --install --values values.yaml loki grafana/loki-stack -n logging --create-namespace
+helm upgrade --install --values values.yaml loki grafana/loki-stack -n grafana-loki--create-namespace
 ```
 
 All pods should ibe in ready state
 ```bash
-kubectl get pods -n logging
+kubectl get pods -n grafana-loki
 ```
 
 ```bash
-kubectl get svc -n logging
+kubectl get svc -n grafana-loki
 ```
 
 ```bash
-kubectl port-forward -n logging --address 0.0.0.0 svc/loki-grafana 3000:80
+kubectl port-forward -n grafana-loki --address 0.0.0.0 svc/loki-grafana 3000:80 &
 ```
 
 ```bash
