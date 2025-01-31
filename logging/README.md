@@ -24,5 +24,5 @@ kubectl port-forward -n grafana-loki --address 0.0.0.0 svc/loki-grafana 3000:80 
 ```
 
 ```bash
-access the grafana UI at http://<node's_public_ip>:3000
+access the grafana UI at http://<node\'s_public_ip>:3000
 ```
