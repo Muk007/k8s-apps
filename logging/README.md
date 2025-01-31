@@ -20,7 +20,7 @@ kubectl get svc -n logging
 ```
 
 ```bash
-kubectl port-forward -n logging --address 0.0.0.0 svc/grafana-loki 3000:80
+kubectl port-forward -n logging --address 0.0.0.0 svc/loki-grafana 3000:80
 ```
 
 ```bash
