@@ -7,7 +7,7 @@ helm repo update
 ```
 
 ```bash
-helm upgrade --install --values values.yaml loki grafana/loki-stack -n grafana-loki--create-namespace
+helm upgrade --install --values values.yaml loki grafana/loki-stack -n grafana-loki --create-namespace
 ```
 
 All pods should ibe in ready state
