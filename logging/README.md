@@ -10,6 +10,11 @@ helm repo update
 helm upgrade --install --values values.yaml loki grafana/loki-stack -n logging --create-namespace
 ```
 
+All pods should ibe in ready state
+```bash
+kubectl get pods -n logging
+```
+
 ```bash
 kubectl get svc -n logging
 ```
