@@ -19,7 +19,7 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
 
-### 3. Install Loki and Grafana using Helm
+### 3. Install Loki, Grafana & Promtail using Helm
 ```sh
 helm upgrade --install --values values.yaml loki grafana/loki-stack -n logging --create-namespace
 ```
