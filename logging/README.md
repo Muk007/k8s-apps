@@ -1,6 +1,6 @@
 # PLG Stack (Promtail, Loki & Grafana) Setup with Helm
 
-This guide provides step-by-step instructions to deploy Loki and Grafana in Kubernetes using Helm.
+This guide provides step-by-step instructions to deploy Loki, Grafana & Promtail in Kubernetes using Helm.
 
 ## Prerequisites
 - A running Kubernetes cluster
