@@ -105,8 +105,7 @@ kubectl get svc argocd-server -n argocd
 │   │       │   ├── deployment.yaml
 │   │       │   ├── kustomization.yaml
 │   │       │   ├── service.yaml
-│   │       │   ├── serviceaccount.yaml
-│   │       │   └── serviceaccount.yamle
+│   │       │   └── serviceaccount.yaml
 │   │       └── overlays
 │   │           └── dev
 │   │               ├── deployment-patch.yaml
