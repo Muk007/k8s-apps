@@ -1,5 +1,14 @@
 # Helm Installation Guide for Prometheus and Grafana
 
+This guide provides step-by-step instructions to deploy Prometheus, Grafana & node-exporter in Kubernetes using Helm.
+
+## Prerequisites
+- A running Kubernetes cluster
+- Helm installed (`helm version` to check)
+- `kubectl` installed and configured (`kubectl version` to check)
+
+## Installation Steps
+
 ## Add namespace for monitoring stack
 ```sh
 kubectl add namespace monitoring
@@ -29,7 +38,7 @@ helm install grafana grafana/grafana --namespace monitoring
 
 ## Port Forward Grafana Service
 ```sh
-kubectl port-forward --address 0.0.0.0 svc/grafana 3000:3000 --namespace monitoring
+kubectl port-forward --address 0.0.0.0 svc/grafana 3000:80 --namespace monitoring
 ```
 
 ## Retrieve Grafana Admin Password
