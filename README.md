@@ -75,43 +75,49 @@ kubectl get svc argocd-server -n argocd
 
 .
 ├── README.md
+├── logging
+│   ├── README.md
+│   └── values.yaml
 ├── manifests
-│   ├── apps
-│   │   ├── accounts
-│   │   │   ├── base
-│   │   │   │   ├── deployment.yaml
-│   │   │   │   ├── kustomization.yaml
-│   │   │   │   ├── service.yaml
-│   │   │   │   └── serviceaccount.yaml
-│   │   │   └── overlays
-│   │   │       └── dev
-│   │   │           ├── deployment-patch.yaml
-│   │   │           └── kustomization.yaml
-│   │   ├── entity
-│   │   │   ├── base
-│   │   │   │   ├── deployment.yaml
-│   │   │   │   ├── kustomization.yaml
-│   │   │   │   ├── service.yaml
-│   │   │   │   └── serviceaccount.yaml
-│   │   │   └── overlays
-│   │   │       └── dev
-│   │   │           ├── deployment-patch.yaml
-│   │   │           └── kustomization.yaml
-│   │   └── generalledger
-│   │       ├── base
-│   │       │   ├── deployment.yaml
-│   │       │   ├── kustomization.yaml
-│   │       │   ├── service.yaml
-│   │       │   ├── serviceaccount.yaml
-│   │       │   └── serviceaccount.yamle
-│   │       └── overlays
-│   │           └── dev
-│   │               ├── deployment-patch.yaml
-│   │               └── kustomization.yaml
-│   └── argo
-│       ├── applications
-│       │   └── application.yaml
-│       └── projects
-│           └── project.yaml
-└── monitoring
-    └── README.md
+│   ├── apps
+│   │   ├── accounts
+│   │   │   ├── base
+│   │   │   │   ├── deployment.yaml
+│   │   │   │   ├── kustomization.yaml
+│   │   │   │   ├── service.yaml
+│   │   │   │   └── serviceaccount.yaml
+│   │   │   └── overlays
+│   │   │       └── dev
+│   │   │           ├── deployment-patch.yaml
+│   │   │           └── kustomization.yaml
+│   │   ├── entity
+│   │   │   ├── base
+│   │   │   │   ├── deployment.yaml
+│   │   │   │   ├── kustomization.yaml
+│   │   │   │   ├── service.yaml
+│   │   │   │   └── serviceaccount.yaml
+│   │   │   └── overlays
+│   │   │       └── dev
+│   │   │           ├── deployment-patch.yaml
+│   │   │           └── kustomization.yaml
+│   │   └── generalledger
+│   │       ├── base
+│   │       │   ├── deployment.yaml
+│   │       │   ├── kustomization.yaml
+│   │       │   ├── service.yaml
+│   │       │   ├── serviceaccount.yaml
+│   │       │   └── serviceaccount.yamle
+│   │       └── overlays
+│   │           └── dev
+│   │               ├── deployment-patch.yaml
+│   │               └── kustomization.yaml
+│   └── argo
+│       ├── applications
+│       │   └── application.yaml
+│       └── projects
+│           └── project.yaml
+├── monitoring
+│   ├── README.md
+│   └── dashboard.json
+└── scripts
+    └── manifest-validation.sh
