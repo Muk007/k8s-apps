@@ -11,7 +11,7 @@ This guide provides step-by-step instructions to deploy Prometheus, Grafana & no
 
 ## Add namespace for monitoring stack
 ```sh
-kubectl add namespace monitoring
+kubectl create namespace monitor
 ```
 
 ## Add Helm Repositories
@@ -22,7 +22,7 @@ helm repo update
 
 ## Install Prometheus
 ```sh
-helm install prometheus prometheus-community/prometheusa --namespace monitoring
+helm install prometheus prometheus-community/prometheus --namespace monitor
 ```
 
 ## Add Grafana Helm Repository
@@ -33,15 +33,15 @@ helm repo update
 
 ## Install Grafana
 ```sh
-helm install grafana grafana/grafana --namespace monitoring
+helm install grafana grafana/grafana --namespace monitor
 ```
 
 ## Port Forward Grafana Service
 ```sh
-kubectl port-forward --address 0.0.0.0 svc/grafana 3000:80 --namespace monitoring
+kubectl port-forward --address 0.0.0.0 svc/grafana 3000:80 --namespace monitor
 ```
 
 ## Retrieve Grafana Admin Password
 ```sh
-kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | ForEach-Object { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) } --namespace monitoring
+kubectl get secret grafana -o jsonpath="{.data.admin-password}"  --namespace monitor | base64 -d && echo
 ```
