@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: entity-service
-          image: nginx:latest
+          image: nginx:1.0.1
           ports:
             - containerPort: 80
