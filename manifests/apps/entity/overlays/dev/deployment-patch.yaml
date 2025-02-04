@@ -10,4 +10,4 @@ spec:
       serviceAccountName: entity-sa
       containers:
         - name: entity-service
-          image: nginx:alpine
+          image: nginx:1.27.3
