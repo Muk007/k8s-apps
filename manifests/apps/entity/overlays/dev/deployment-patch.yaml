@@ -10,4 +10,6 @@ spec:
       serviceAccountName: entity-sa
       containers:
         - name: entity-service
-          image: nginx:bookworm
+          image: docker.io/Muk007/nginx:latest
+      imagePullSecrets:
+        - name: my-dockerhub-secret
