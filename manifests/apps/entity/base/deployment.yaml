@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: entity-service
-          image: nginx:latest
+          image: nginx:1-bookworm
           ports:
             - containerPort: 80
