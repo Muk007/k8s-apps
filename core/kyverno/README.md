@@ -1,45 +1,92 @@
-# Install Kyverno on Kubernetes
+# Kyverno Installation and Policy Enforcement Guide
 
-Kyverno is a policy engine for Kubernetes that allows you to define and enforce security rules easily. Follow the steps below to install and verify Kyverno in your cluster.
+## Install Kyverno
 
-## Prerequisites
-- A running Kubernetes cluster
-- `kubectl` installed and configured
-- `helm` installed
+To install Kyverno using Helm, follow these steps:
 
-## Installation Steps
-
-### 1. Add the Kyverno Helm Repository
 ```sh
 helm repo add kyverno https://kyverno.github.io/kyverno/
 helm repo update
-```
-
-### 2. Install Kyverno using Helm
-```sh
 helm install kyverno kyverno/kyverno -n kyverno --create-namespace
 ```
 
-### 3. (Alternative) Install Kyverno using `kubectl`
-If you prefer to install Kyverno directly without Helm, use the following commands:
+Alternatively, install Kyverno using `kubectl`:
+
 ```sh
 kubectl create namespace kyverno
 kubectl apply -f https://github.com/kyverno/kyverno/releases/latest/download/install.yaml
 ```
 
-### 4. Verify Kyverno Installation
-Check if Kyverno pods are running:
+Verify the installation:
+
 ```sh
 kubectl get pods -n kyverno
 ```
 
-Expected output should show Kyverno pods in `Running` state.
+## Example - Apply Security Policies
 
-## Next Steps
-- Deploy Kyverno policies to enforce security rules.
-- Use `kubectl get clusterpolicy` to check applied policies.
-- Visit the [Kyverno documentation](https://kyverno.io/) for more details.
+### Restrict Root User Policy
+
+Create a policy file `restrict-root-user-policy.yaml`:
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: restrict-root-user
+spec:
+  validationFailureAction: Enforce
+  rules:
+    - name: check-root-user
+      match:
+        resources:
+          kinds:
+            - Pod
+      validate:
+        message: "Running as root is not allowed."
+        pattern:
+          spec:
+            securityContext:
+              runAsNonRoot: true
+```
+
+Apply the policy:
+
+```sh
+kubectl create -f restrict-root-user-policy.yaml
+```
+
+Verify the policy:
+
+```sh
+kubectl get clusterpolicy
+```
+
+### Test the Policy
+
+Create a test pod definition in `test-root-pod.yaml`:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-root-pod
+spec:
+  securityContext:
+    runAsUser: 0
+  containers:
+    - name: busybox
+      image: busybox
+      command: ["sleep", "3600"]
+```
+
+Apply the test pod:
+
+```sh
+kubectl apply -f test-root-pod.yaml
+```
+
+Since the policy enforces non-root execution, the pod creation should fail with an error message indicating that running as root is not allowed.
 
 ---
-
-Happy Policy Enforcing! 🚀
+This guide ensures a secure Kubernetes environment using Kyverno policies. Modify policies as needed for your specific security requirements. 🚀
