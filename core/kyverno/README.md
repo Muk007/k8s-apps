@@ -13,7 +13,6 @@ helm install kyverno kyverno/kyverno -n kyverno --create-namespace
 Alternatively, install Kyverno using `kubectl`:
 
 ```sh
-kubectl create namespace kyverno
 kubectl apply -f https://github.com/kyverno/kyverno/releases/latest/download/install.yaml
 ```
 
