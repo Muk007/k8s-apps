@@ -72,51 +72,59 @@ kubectl get svc argocd-server -n argocd
 ## Repository Structure
 
 ```plaintext
-
 .
 ├── README.md
+├── core
+│   ├── argo
+│   │   ├── applications
+│   │   │   └── application.yaml
+│   │   └── projects
+│   │       └── project.yaml
+│   └── kyverno
+│       ├── README.md
+│       └── policies
+│           └── restrict-root-user-policy.yaml
 ├── logging
-│   ├── README.md
-│   └── values.yaml
+│   ├── README.md
+│   └── values.yaml
 ├── manifests
-│   ├── apps
-│   │   ├── accounts
-│   │   │   ├── base
-│   │   │   │   ├── deployment.yaml
-│   │   │   │   ├── kustomization.yaml
-│   │   │   │   ├── service.yaml
-│   │   │   │   └── serviceaccount.yaml
-│   │   │   └── overlays
-│   │   │       └── dev
-│   │   │           ├── deployment-patch.yaml
-│   │   │           └── kustomization.yaml
-│   │   ├── entity
-│   │   │   ├── base
-│   │   │   │   ├── deployment.yaml
-│   │   │   │   ├── kustomization.yaml
-│   │   │   │   ├── service.yaml
-│   │   │   │   └── serviceaccount.yaml
-│   │   │   └── overlays
-│   │   │       └── dev
-│   │   │           ├── deployment-patch.yaml
-│   │   │           └── kustomization.yaml
-│   │   └── generalledger
-│   │       ├── base
-│   │       │   ├── deployment.yaml
-│   │       │   ├── kustomization.yaml
-│   │       │   ├── service.yaml
-│   │       │   └── serviceaccount.yaml
-│   │       └── overlays
-│   │           └── dev
-│   │               ├── deployment-patch.yaml
-│   │               └── kustomization.yaml
-│   └── argo
-│       ├── applications
-│       │   └── application.yaml
-│       └── projects
-│           └── project.yaml
+│   └── apps
+│       ├── accounts
+│       │   ├── base
+│       │   │   ├── deployment.yaml
+│       │   │   ├── kustomization.yaml
+│       │   │   ├── service.yaml
+│       │   │   └── serviceaccount.yaml
+│       │   └── overlays
+│       │       └── dev
+│       │           ├── deployment-patch.yaml
+│       │           └── kustomization.yaml
+│       ├── entity
+│       │   ├── base
+│       │   │   ├── deployment.yaml
+│       │   │   ├── kustomization.yaml
+│       │   │   ├── service.yaml
+│       │   │   └── serviceaccount.yaml
+│       │   └── overlays
+│       │       └── dev
+│       │           ├── deployment-patch.yaml
+│       │           └── kustomization.yaml
+│       └── generalledger
+│           ├── base
+│           │   ├── deployment.yaml
+│           │   ├── kustomization.yaml
+│           │   ├── service.yaml
+│           │   └── serviceaccount.yaml
+│           └── overlays
+│               └── dev
+│                   ├── deployment-patch.yaml
+│                   └── kustomization.yaml
 ├── monitoring
-│   ├── README.md
-│   └── dashboard.json
+│   ├── README.md
+│   ├── dashboard_1.json
+│   └── dashboard_2.json
 └── scripts
     └── manifest-validation.sh
+
+24 directories, 29 files
+```
