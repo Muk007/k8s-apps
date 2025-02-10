@@ -77,9 +77,14 @@ kubectl get svc argocd-server -n argocd
 ├── core
 │   ├── argo
 │   │   ├── applications
+│   │   │   ├── application.yaml_bkup
 │   │   │   └── applicationset.yaml
 │   │   └── projects
 │   │       └── project.yaml
+│   ├── calico
+│   │   └── README.md
+│   ├── istio
+│   │   └── README.md
 │   └── kyverno
 │       ├── README.md
 │       └── policies
@@ -126,5 +131,5 @@ kubectl get svc argocd-server -n argocd
 └── scripts
     └── manifest-validation.sh
 
-24 directories, 29 files
+26 directories, 32 files
 ```
