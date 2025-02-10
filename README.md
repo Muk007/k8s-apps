@@ -59,7 +59,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 
 ```bash
 kubectl apply -f core/argo/projects/project.yaml
-kubectl apply -f core/argo/applications/application.yaml
+kubectl apply -f core/argo/applications/applicationset.yaml
 ```
 
 ### Step 5: Get the argo UI url (argocd-server service DNS or External IP) using below command and paste it on your browser
@@ -77,7 +77,7 @@ kubectl get svc argocd-server -n argocd
 ├── core
 │   ├── argo
 │   │   ├── applications
-│   │   │   └── application.yaml
+│   │   │   └── applicationset.yaml
 │   │   └── projects
 │   │       └── project.yaml
 │   └── kyverno
