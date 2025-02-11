@@ -16,12 +16,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+     
+      - name: SetUp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
       - name: Install Checkov ⬇️
-        run: |
-          sudo apt update -y
-          sudo apt install python3-pip
-          sudo pip3 install checkov
+        run: pip install checkov
 
       - name: Install Kustomize ⬇️
         run: |
