@@ -10,6 +10,6 @@ spec:
       serviceAccountName: micro-service-101-sa
       containers:
         - name: micro-service-101
-          image: docker.io/muk007/spring-boot:version-16
+          image: docker.io/muk007/nginx:version-17
       imagePullSecrets:
         - name: my-dockerhub-secret
