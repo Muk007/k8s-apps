@@ -16,12 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Kubeconform ⬇️
+      - name: Install Checkov ⬇️
         run: |
-          curl -LO "https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz"
-          tar -xvf kubeconform-linux-amd64.tar.gz 
-          chmod +x kubeconform
-          sudo mv kubeconform /usr/local/bin/
+          apt update -y
+          apt install pyth9on3-pip
+          pip3 install checkov
 
       - name: Install Kustomize ⬇️
         run: |

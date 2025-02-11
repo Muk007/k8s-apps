@@ -21,7 +21,7 @@ for app_dir in manifests/apps/*; do
           echo "🔍 Validating overlay: $overlay"
 
           # Validate with kubeconform
-          kustomize build "$overlay" | kubeconform -strict -summary -schema-location default
+          kustomize build "$overlay" | checkov --framework kubernetes -f -
 	  echo 
         fi
       done
