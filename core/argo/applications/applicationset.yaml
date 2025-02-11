@@ -13,6 +13,9 @@ spec:
           - name: accounts
             namespace: accounts
             path: manifests/apps/accounts/overlays/dev
+          - name: micro-service-101
+            namespace: micro-service-101
+            path: manifests/apps/micro-service-101/overlays/dev
   template:
     metadata:
       name: "{{name}}"
