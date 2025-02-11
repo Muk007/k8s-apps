@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: micro-service-101
+  name: micro-service-101
+  labels:
+    app: micro-service-101
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: micro-service-101
+  template:
+    metadata:
+      labels:
+        app: micro-service-101
+    spec:
+      containers:
+        - name: micro-service-101
+          image: 
+          ports:
+            - containerPort: 8080
