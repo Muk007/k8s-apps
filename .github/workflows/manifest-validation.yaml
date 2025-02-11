@@ -20,7 +20,7 @@ jobs:
       - name: Install Checkov ⬇️
         run: |
           sudo apt update -y
-          sudo apt install pyth9on3-pip
+          sudo apt install python3-pip
           sudo pip3 install checkov
 
       - name: Install Kustomize ⬇️
