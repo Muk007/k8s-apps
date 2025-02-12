@@ -7,9 +7,6 @@ spec:
   generators:
     - list:
         elements:
-          - name: argo-components
-            namespace: argocd
-            path: core/argo/argo-manifest
           - name: ingress-controller-components
             namespace: ingress-nginx
             path: core/ingress-controller
