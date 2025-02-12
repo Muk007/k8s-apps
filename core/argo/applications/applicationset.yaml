@@ -18,7 +18,10 @@ spec:
             path: manifests/apps/micro-service-101/overlays/dev
           - name: ingress-controller-components
             namespace: ingress-nginx
-            path: core/ingress-controller/
+            path: core/ingress-controller
+          - name: argo-components
+            namespace: argocd
+            path: core/argo/argo-manifest
   template:
     metadata:
       name: "{{name}}"
