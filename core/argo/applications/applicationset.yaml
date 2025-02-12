@@ -17,7 +17,7 @@ spec:
             namespace: micro-service-101
             path: manifests/apps/micro-service-101/overlays/dev
           - name: ingress-controller-components
-            name: ingress-nginx
+            namespace: ingress-nginx
             path: core/ingress-controller/
   template:
     metadata:
