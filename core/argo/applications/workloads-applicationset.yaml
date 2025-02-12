@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: sandbox-applications
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - name: entity
+            namespace: entity
+            path: manifests/apps/entity/overlays/dev
+          - name: accounts
+            namespace: accounts
+            path: manifests/apps/accounts/overlays/dev
+          - name: micro-service-101
+            namespace: micro-service-101
+            path: manifests/apps/micro-service-101/overlays/dev
+  template:
+    metadata:
+      name: "{{name}}"
+      namespace: argocd
+    spec:
+      project: sandbox-project
+      source:
+        repoURL: https://github.com/devops-contribution/k8s-apps
+        targetRevision: HEAD
+        path: "{{path}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{namespace}}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
