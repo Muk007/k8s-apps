@@ -7,6 +7,12 @@ spec:
   generators:
     - list:
         elements:
+          - name: argo-components
+            namespace: argocd
+            path: core/argo/argo-manifest
+          - name: ingress-controller-components
+            namespace: ingress-nginx
+            path: core/ingress-controller
           - name: entity
             namespace: entity
             path: manifests/apps/entity/overlays/dev
@@ -16,12 +22,6 @@ spec:
           - name: micro-service-101
             namespace: micro-service-101
             path: manifests/apps/micro-service-101/overlays/dev
-          - name: ingress-controller-components
-            namespace: ingress-nginx
-            path: core/ingress-controller
-          - name: argo-components
-            namespace: argocd
-            path: core/argo/argo-manifest
   template:
     metadata:
       name: "{{name}}"
