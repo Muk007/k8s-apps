@@ -8,20 +8,22 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: example.com
+    - host: ad628c4650fbf4eae8e2f883249dca1c-2084713246.us-west-2.elb.amazonaws.com
       http:
         paths:
-          - path: /app1
+          - path: /api/v1/say-hello
             pathType: Prefix
             backend:
               service:
-                name: app1-service
+                name: micro-service-101
+                namespace: micro-service-101
                 port:
-                  number: 80
-          - path: /app2
+                  number: 8080
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: app2-service
+                name: entity-service
+                namespace: entity
                 port:
                   number: 80
