@@ -4,7 +4,7 @@ metadata:
   namespace: micro-service-101
   name: micro-service-101
 spec:
-  replicas: 3
+  replicas: 5
   template:
     spec:
       serviceAccountName: micro-service-101-sa
