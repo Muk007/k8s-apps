@@ -74,17 +74,23 @@ kubectl get svc argocd-server -n argocd
 ## Repository Structure
 
 ```plaintext
+
 .
 ├── README.md
 ├── core
 │   ├── argo
 │   │   ├── applications
 │   │   │   ├── application.yaml_bkup
-│   │   │   └── applicationset.yaml
+│   │   │   ├── core-components-applicationset.yaml
+│   │   │   └── workloads-applicationset.yaml
 │   │   └── projects
-│   │       └── project.yaml
+│   │       ├── core-components-project.yaml
+│   │       └── workloads-project.yaml
 │   ├── calico
 │   │   └── README.md
+│   ├── ingress-controller
+│   │   └── base
+│   │       └── deploy.yaml
 │   ├── istio
 │   │   └── README.md
 │   └── kyverno
@@ -103,22 +109,52 @@ kubectl get svc argocd-server -n argocd
 │       │   │   ├── service.yaml
 │       │   │   └── serviceaccount.yaml
 │       │   └── overlays
-│       │       └── dev
+│       │       ├── dev
+│       │       │   ├── deployment-patch.yaml
+│       │       │   └── kustomization.yaml
+│       │       ├── prd
+│       │       │   ├── deployment-patch.yaml
+│       │       │   └── kustomization.yaml
+│       │       └── stg
 │       │           ├── deployment-patch.yaml
 │       │           └── kustomization.yaml
 │       ├── entity
+│       │   ├── base
+│       │   │   ├── deployment.yaml
+│       │   │   ├── ingress.yaml
+│       │   │   ├── kustomization.yaml
+│       │   │   ├── service.yaml
+│       │   │   └── serviceaccount.yaml
+│       │   └── overlays
+│       │       ├── dev
+│       │       │   ├── deployment-patch.yaml
+│       │       │   └── kustomization.yaml
+│       │       ├── prd
+│       │       │   ├── deployment-patch.yaml
+│       │       │   └── kustomization.yaml
+│       │       └── stg
+│       │           ├── deployment-patch.yaml
+│       │           └── kustomization.yaml
+│       ├── generalledger
 │       │   ├── base
 │       │   │   ├── deployment.yaml
 │       │   │   ├── kustomization.yaml
 │       │   │   ├── service.yaml
 │       │   │   └── serviceaccount.yaml
 │       │   └── overlays
-│       │       └── dev
+│       │       ├── dev
+│       │       │   ├── deployment-patch.yaml
+│       │       │   └── kustomization.yaml
+│       │       ├── prd
+│       │       │   ├── deployment-patch.yaml
+│       │       │   └── kustomization.yaml
+│       │       └── stg
 │       │           ├── deployment-patch.yaml
 │       │           └── kustomization.yaml
-│       └── generalledger
+│       └── micro-service-101
 │           ├── base
 │           │   ├── deployment.yaml
+│           │   ├── ingress.yaml
 │           │   ├── kustomization.yaml
 │           │   ├── service.yaml
 │           │   └── serviceaccount.yaml
@@ -133,5 +169,7 @@ kubectl get svc argocd-server -n argocd
 └── scripts
     └── manifest-validation.sh
 
-26 directories, 32 files
+38 directories, 55 files
+
+
 ```
