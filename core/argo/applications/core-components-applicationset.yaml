@@ -9,7 +9,7 @@ spec:
         elements:
           - name: ingress-controller-components
             namespace: ingress-nginx
-            path: core/ingress-controller
+            path: core/ingress-controller/base
   template:
     metadata:
       name: "{{name}}"
