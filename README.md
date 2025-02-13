@@ -64,7 +64,7 @@ kubectl apply -f core/argo/applications/core-components-applicationset.yaml
 kubectl apply -f core/argo/applications/workloads-applicationset.yaml
 ```
 
-### Step 5: Get the argo UI url (argocd-server service DNS or External IP) using below command and paste it on your browser
+### Step 5: Get the argo UI url (argocd-server service DNS or External IP) using below command and paste it on your browser (use the nodeport port as well). Exmaple http://X.X.X.X:32717
 
 ```bash
 kubectl get svc argocd-server -n argocd
@@ -74,7 +74,6 @@ kubectl get svc argocd-server -n argocd
 ## Repository Structure
 
 ```plaintext
-
 .
 ├── README.md
 ├── core
@@ -170,6 +169,4 @@ kubectl get svc argocd-server -n argocd
     └── manifest-validation.sh
 
 38 directories, 55 files
-
-
 ```
