@@ -15,7 +15,7 @@ spec:
       name: "{{name}}"
       namespace: argocd
     spec:
-      project: core-components-project
+      project: core-components
       source:
         repoURL: https://github.com/devops-contribution/k8s-apps
         targetRevision: HEAD
