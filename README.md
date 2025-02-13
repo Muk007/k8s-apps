@@ -61,7 +61,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 kubectl apply -f core/argo/projects/core-components-project.yaml
 kubectl apply -f core/argo/projects/workloads-project.yaml
 kubectl apply -f core/argo/applications/core-components-applicationset.yaml
-kubectl apply -f workloads-applicationset.yaml
+kubectl apply -f core/argo/applications/workloads-applicationset.yaml
 ```
 
 ### Step 5: Get the argo UI url (argocd-server service DNS or External IP) using below command and paste it on your browser
