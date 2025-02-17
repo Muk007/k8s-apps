@@ -336,7 +336,7 @@ metadata:
     app.kubernetes.io/version: 1.12.0
   name: ingress-nginx-controller
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
   namespace: ingress-nginx
 spec:
   externalTrafficPolicy: Local
